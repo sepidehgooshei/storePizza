@@ -22,7 +22,7 @@ const router = createBrowserRouter([
       },{
         path:"/order/new",
         element:<CreateOrder/>,
-        action: createOrderAction, // Added `action` here
+        action: createOrderAction, 
       },{
         path:"/order/:orderId",
         element:<Order/>,

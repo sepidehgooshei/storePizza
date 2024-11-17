@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import CreateUser from '../user/createUser';
+import CreateUser from '../user/CreateUser';
 
 function Home() {
   const username = useSelector((state) => state.user.username);
