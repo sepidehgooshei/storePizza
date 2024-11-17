@@ -26,7 +26,7 @@ export default function CreateUser() {
       {
        username !== "" && (
       <div className="mt-4">
-              <button type="submit" className="bg-warning">Start ordering</button>
+              <button type="submit" className="bg-warning rounded-pill">Start ordering</button>
 
       </div>
 

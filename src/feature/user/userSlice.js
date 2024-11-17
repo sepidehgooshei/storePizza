@@ -2,14 +2,12 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { getAddress } from '../services/apiGeocoding';
 
-// دریافت موقعیت جغرافیایی کاربر
 function getPosition() {
   return new Promise(function (resolve, reject) {
     navigator.geolocation.getCurrentPosition(resolve, reject);
   });
 }
 
-// اکشن برای دریافت آدرس
 export const fetchAddress = createAsyncThunk(
   'user/fetchAddress',
   async function () {
@@ -26,11 +24,7 @@ export const fetchAddress = createAsyncThunk(
   }
 );
 
-// بازیابی مقدار username از localStorage
-const savedUsername = localStorage.getItem('username') || '';
-
 const initialState = {
-  username: savedUsername, // مقدار اولیه از localStorage
   status: 'idle',
   position: {},
   address: '',
@@ -43,8 +37,6 @@ const userSlice = createSlice({
   reducers: {
     updateName(state, action) {
       state.username = action.payload;
-      // ذخیره username در localStorage
-      localStorage.setItem('username', action.payload);
     },
   },
   extraReducers: (builder) =>
